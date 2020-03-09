@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.wxf.domain">
+	<class name="Employee" table="employee">
+		<cache usage="read-write"/>
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="email" type="java.lang.String">
+			<column name="email" length="30"></column>
+		</property>
+		<property name="hireDate" type="java.util.Date">
+			<column name="hireDate"/>
+		</property>
+		<property name="name" type="java.lang.String">
+			<column name="name" length="30" />
+		</property>
+		<property name="salary" type="java.lang.Double">
+			<column name="salary"/>
+		</property>
+		<property name="password" type="java.lang.String">
+			<column name="password" length="20"></column>
+		</property>
+		<property name="grade" type="java.lang.Integer">
+			<column name="grade" />
+		</property>
+		<many-to-one name="department" column="depart_id"/>
+	</class>
+</hibernate-mapping>

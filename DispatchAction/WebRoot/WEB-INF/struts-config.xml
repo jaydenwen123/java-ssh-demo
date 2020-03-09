@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+  <form-beans >
+    <form-bean name="loginForm" type="com.wxf.struts.form.LoginForm" />
+    <form-bean name="userForm" type="org.apache.struts.action.DynaActionForm" >
+    	<form-property name="username" type="java.lang.String"></form-property>
+    	<form-property name="password" type="java.lang.String"></form-property>
+    	<form-property name="address" type="java.lang.String"></form-property>
+    	<form-property name="email" type="java.lang.String"></form-property>
+    </form-bean>
+
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards >
+    <forward name="error" path="/WEB-INF/error.jsp" />
+  </global-forwards>
+
+  <action-mappings >
+    <action
+      attribute="userForm"
+      input="/WEB-INF/loginok.jsp"
+      name="userForm"
+      parameter="flag"
+      path="/login"
+      scope="request"
+      type="com.wxf.struts.action.LoginAction"
+      validate="false">
+      <forward name="returnlogin" path="/WEB-INF/login.jsp" />
+      <forward name="loginok" path="/WEB-INF/loginok.jsp" />
+    </action>
+
+
+  </action-mappings>
+
+  <message-resources parameter="com.wxf.struts.ApplicationResources" />
+</struts-config>
+

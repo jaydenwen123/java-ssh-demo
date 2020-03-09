@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+  <form-beans >
+    <form-bean name="loginForm" type="com.wxf.struts.form.LoginForm" />
+    
+    <form-bean name="studentForm" type="com.wxf.struts.form.StudentForm" />
+   
+    <form-bean name="showForm" type="org.apache.struts.action.DynaActionForm">
+      <form-property name="size" type="java.lang.String" />
+    </form-bean>
+  
+    <form-bean name="regTeacherForm" type="com.wxf.struts.form.RegTeacherForm" />
+    
+    <form-bean name="modifyPwdForm" type="org.apache.struts.action.DynaActionForm">
+      <form-property name="newPwd" type="java.lang.String" />
+      <form-property name="oldPwd" type="java.lang.String" />
+      <form-property name="newPwdAgain" type="java.lang.String"/>
+    </form-bean>
+    <form-bean name="questionForm" type="com.wxf.struts.form.QuestionForm" />
+
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards >
+    <forward name="operok" path="/WEB-INF/operok.jsp" />
+    <forward name="opererr" path="/WEB-INF/opererr.jsp" />
+    <forward name="operQueError" path="/WEB-INF/operQueErr.jsp" />
+    <forward name="operQueOk" path="/WEB-INF/operQueOk.jsp" />
+
+  </global-forwards>
+
+  <action-mappings >
+    <action
+      attribute="loginForm"
+      name="loginForm"
+      parameter="flag"
+      path="/login"
+      scope="request"
+      type="com.wxf.struts.action.LoginAction"
+      validate="false">
+      
+      <forward name="fail" path="/WEB-INF/login.jsp" />
+      <forward name="success" path="/WEB-INF/mainFrame.jsp" />
+      <forward name="exam" path="/WEB-INF/exam.jsp" />
+    </action>
+    <action
+      attribute="studentForm"
+      input="/WEB-INF/addStu.jsp"
+      name="studentForm"
+      parameter="flag"
+      path="/dealStu"
+      scope="request"
+      type="com.wxf.struts.action.DealStuAction"
+      validate="false">
+      <forward name="toAddStu" path="/WEB-INF/addStu.jsp" />
+      <forward name="toStuManager" path="/WEB-INF/StuManager.jsp" />
+      <forward name="toUpdateStu" path="/WEB-INF/updateStu.jsp" />
+      
+    </action>
+    <action
+      attribute="showForm"
+      name="showForm"
+      parameter="flag"
+      path="/show"
+      scope="request"
+      type="com.wxf.struts.action.ShowAction"
+      validate="false" >
+      <forward name="toShowStu" path="/WEB-INF/showStu.jsp" />
+      <forward name="showQuestion" path="/WEB-INF/showQuestion.jsp" />
+    </action>
+    <action
+      attribute="regTeacherForm"
+      input="/WEB-INF/regTeacher.jsp"
+      name="regTeacherForm"
+      parameter="flag"
+      path="/regTeacher"
+      scope="request"
+      type="com.wxf.struts.action.RegTeacherAction"
+      validate="false" >
+      <forward name="tologin" path="/WEB-INF/login.jsp" />
+      <forward name="regfail" path="/WEB-INF/regTeacher.jsp" />
+      <forward name="toregister" path="/WEB-INF/regTeacher.jsp" />
+    </action>
+    <action
+      attribute="modifyPwdForm"
+      input="/WEB-INF/mainFrame.jsp"
+      parameter="flag"
+      name="modifyPwdForm"
+      path="/modifyPwd"
+      scope="request"
+      type="com.wxf.struts.action.ModifyPwdAction"
+      validate="false">
+      <forward name="modifyPwd" path="/WEB-INF/modifyPwd.jsp" />
+      <forward name="toCenter" path="/WEB-INF/center.jsp" />
+    </action>
+    <action
+      attribute="questionForm"
+      input="/WEB-INF/addQuestion.jsp"
+      name="questionForm"
+      parameter="flag"
+      path="/dealQuestion"
+      scope="request"
+      type="com.wxf.struts.action.DealQuestionAction"
+      validate="false">
+      <forward name="updateQuestion" path="/WEB-INF/updateQuestion.jsp" />
+      <forward name="toQuestionManager" path="/WEB-INF/questionManager.jsp" />
+      <forward name="addQuestion" path="/WEB-INF/addQuestion.jsp" />
+      <forward name="showEveryQuestion" path="/WEB-INF/QuestionDetail.jsp" />
+    </action>
+
+
+
+  </action-mappings>
+
+	<controller >
+	<set-property property="processorClass" value="org.springframework.web.struts.DelegatingRequestProcessor" />
+	</controller>
+  <message-resources parameter="com.wxf.struts.ApplicationResources" />
+</struts-config>
+

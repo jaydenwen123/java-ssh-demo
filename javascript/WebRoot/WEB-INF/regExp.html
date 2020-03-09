@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>regExp</title>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
+    <meta http-equiv="description" content="this is my page"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript" language="javascript">
+		<!--
+			function testRegExp(){
+					var myContent=document.getElementById("content").innerText;
+					var myContent2=document.getElementById("content").value;
+					window.alert(myContent2);
+					//var reg=new RegExp("(\\d){4}","gi");
+					var reg=/(\d){4}/gi;
+					while(res=reg.exec(myContent)){
+						window.alert("找到了"+res[0]);
+					}
+			}
+			
+			function test(){
+				var myContent=document.getElementById("content").value;
+				var reg=/abc/gi;
+				if(reg.test(myContent)){
+					window.alert("包含abc");
+				}
+			}
+		
+		//-->
+	</script>
+  </head>
+  
+  <body>
+		<textarea id="content"  rows="10" cols="30"></textarea><br/>
+		<input type="button" value="测试" onclick="testRegExp()"/>
+		<input type="button" value="测试2" onclick="test()"/>
+  </body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>gridSnake.html</title>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
+    <meta http-equiv="description" content="this is my page"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    
+    <link rel="stylesheet" type="text/css" href="gridSnake.css"/>
+	<script type="text/javascript" language="javascript">
+		<!--
+			
+			function Snake(positionX,positionY,speed){
+				
+				this.positionX=positionX;
+				this.positionY=positionY;
+				this.speed=speed;
+				var timerId1="";
+				var timerId2="";
+				var timerId3="";
+				var timerId4="";
+				var timerId5="";
+				this.show=function(obj){
+					window.alert("show");
+				};
+				this.change=function (value){
+				
+					var snakeTop=snakeBody.style.top;
+					var snakeLeft=snakeBody.style.left;
+					if(arguments.length==0){
+						snakeBody.style.left=parseFloat(snakeLeft.substring(0,snakeLeft.length-2))-10+"px";
+					}else{
+						clearInterval(timerId1);
+						if(value=="up"){
+								clearInterval(timerId3);
+								clearInterval(timerId4);
+								clearInterval(timerId5);
+								snakeBody.style.top=parseFloat(snakeTop.substring(0,snakeTop.length-2))-10+"px";
+							}
+						if(value=="down"){
+								clearInterval(timerId2);
+								clearInterval(timerId4);
+								clearInterval(timerId5);
+								snakeBody.style.top=parseFloat(snakeTop.substring(0,snakeTop.length-2))+10+"px";
+							}
+					 if(value=="left"){
+								clearInterval(timerId2);
+								clearInterval(timerId3);
+								clearInterval(timerId5);
+								snakeBody.style.left=parseFloat(snakeLeft.substring(0,snakeLeft.length-2))-10+"px";
+							}
+				 if(value=="right"){
+								clearInterval(timerId2);
+								clearInterval(timerId4);
+								clearInterval(timerId3);
+								snakeBody.style.left=parseFloat(snakeLeft.substring(0,snakeLeft.length-2))+10+"px";
+							}
+					}
+				};
+				
+				this.move=function (obj1){
+					if(obj1.value=="↑↑"){
+								timerId2=setInterval("snake.change('up')", 200);
+								//window.alert("hello");
+							}else if(obj1.value=="↓↓"){
+								timerId3=setInterval("snake.change('down')", 200);
+							}else if(obj1.value=="←←"){
+								timerId4=setInterval("snake.change('left')", 200);
+							}else if(obj1.value=="→→"){
+								timerId5=setInterval("snake.change('right')", 200);
+							}
+				};
+				this.oper=function (obj){
+					if(obj.value=="开始"){
+						clearInterval(timerId2);
+						clearInterval(timerId3);
+						clearInterval(timerId4);
+						clearInterval(timerId5);
+						timerId1=window.setInterval("snake.change();", 200);
+						//this.up();
+					}else if(obj.value=="暂停"){
+						clearInterval(timerId1);
+					}else if( obj.value=="退出"){
+						window.confirm("确定要退出吗");
+					}
+				};
+				
+				this.setSpeed=function (obj){
+					var sp=window.prompt();
+					if(!isNaN(sp) && sp!=null){
+						this.speed=sp;
+					}
+				};
+			}
+			
+			var snake=new Snake(1,1,1);
+		//-->
+	</script>
+	
+  </head>
+  
+  <body>
+  <h2 align="center">贪吃蛇游戏</h2>
+	<div class="mainfield">
+		<div style="position :absolute;top:100px;left:213px;">
+			<img src="food.png" />
+		</div>
+		<div style="position:absolute;top:427px;left:410px; " id="snakeBody">
+			<!-- <img src="head.png" class="snake"></img>
+			<img src="body.png" class="snake"></img>
+			<img src="foot.png" class="snake" /> -->
+			<img src="snake.png"></img>
+		</div>
+	</div>
+<div  class="operCenter">
+	<table>
+		<tr>
+		<td><input type="button" value="开始" onclick="snake.oper(this)"/></td>
+		<td><input type="button" value="暂停" onclick="snake.oper(this)"/></td>
+		<td><input type="button" value="设置速度" onclick="snake.setSpeed(this)"/></td>
+		<td><input type="button" value="退出" onclick="snake.oper(this)"/></td>
+		<td><input type="button" value="显示结果" onclick="snake.show(this)"/></td>
+		<td><input type="button" value="↑↑" onclick="snake.move(this)"/></td>
+		<td><input type="button" value="↓↓" onclick="snake.move(this)"/></td>
+		<td><input type="button" value="←←" onclick="snake.move(this)"/></td>
+		<td><input type="button" value="→→" onclick="snake.move(this)"/></td>
+		</tr>
+	</table>
+</div>
+  </body>
+</html>

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/login.do" location="45,45" dimension="176,119" />
+  <StrutsActivity path="/dealStu.do" location="720,-30" dimension="191,134" />
+  <StrutsActivity path="/show.do" location="795,240" dimension="232,104" />
+  <StrutsActivity path="/regTeacher.do" location="240,315" dimension="166,121" />
+  <StrutsActivity path="/modifyPwd.do" location="225,-165" dimension="166,104" />
+  <StrutsActivity path="/dealQuestion.do" location="465,165" dimension="150,100" />
+  <StrutsActivity path="operok;6" location="30,-435" dimension="150,100" />
+  <StrutsActivity path="opererr;6" location="240,-435" dimension="150,100" />
+  <StrutsActivity path="operQueError;6" location="480,-435" dimension="150,100" />
+  <StrutsActivity path="operQueOk;6" location="720,-435" dimension="150,100" />
+  <StrutsActivity path="/WEB-INF/login.jsp" location="270,105" dimension="150,115" />
+  <StrutsActivity path="/WEB-INF/exam.jsp" location="30,210" dimension="150,100" />
+  <StrutsActivity path="/WEB-INF/mainFrame.jsp" location="480,-30" dimension="150,121" />
+  <StrutsActivity path="/WEB-INF/updateStu.jsp" location="750,-180" dimension="150,100" />
+  <StrutsActivity path="/WEB-INF/addStu.jsp" location="1005,-45" dimension="150,106" />
+  <StrutsActivity path="/WEB-INF/StuManager.jsp" location="765,135" dimension="150,100" />
+  <StrutsActivity path="/WEB-INF/showStu.jsp" location="1185,195" dimension="150,100" />
+  <StrutsActivity path="/WEB-INF/showQuestion.jsp" location="1185,315" dimension="150,100" />
+  <StrutsActivity path="/WEB-INF/regTeacher.jsp" location="15,330" dimension="150,100" />
+  <StrutsActivity path="/WEB-INF/modifyPwd.jsp" location="-30,-150" dimension="150,100" />
+  <StrutsActivity path="/WEB-INF/center.jsp" location="465,-165" dimension="166,100" />
+  <StrutsActivity path="/WEB-INF/updateQuestion.jsp" location="630,405" dimension="150,100" />
+  <StrutsActivity path="/WEB-INF/QuestionDetail.jsp" location="405,450" dimension="150,100" />
+  <StrutsActivity path="/WEB-INF/questionManager.jsp" location="465,315" dimension="150,100" />
+  <StrutsActivity path="/WEB-INF/addQuestion.jsp" location="840,390" dimension="150,100" />
+  <StrutsActivity path="/WEB-INF/operok.jsp" location="30,-285" dimension="150,100" />
+  <StrutsActivity path="/WEB-INF/opererr.jsp" location="240,-285" dimension="150,100" />
+  <StrutsActivity path="/WEB-INF/operQueErr.jsp" location="480,-285" dimension="150,100" />
+  <StrutsActivity path="/WEB-INF/operQueOk.jsp" location="720,-300" dimension="150,100" />
+  <StrutsTransition id="/dealQuestion.do,showEveryQuestion,/WEB-INF/QuestionDetail.jsp,1" routingType="1">
+    <Bendpoints>
+      <Point rDim1="-120,25" rDim2="-60,-260" />
+    </Bendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/dealStu.do,toStuManager,/WEB-INF/StuManager.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="840,104" />
+      <AbsolutePoint location="840,135" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,fail,/WEB-INF/login.jsp,1" routingType="1">
+    <Bendpoints>
+      <Point rDim1="92,23" rDim2="-150,-27" />
+      <Point rDim1="102,33" rDim2="-135,-27" />
+      <Point rDim1="107,23" rDim2="-135,-27" />
+      <Point rDim1="107,23" rDim2="-135,-27" />
+      <Point rDim1="107,31" rDim2="-105,-27" />
+      <Point rDim1="147,33" rDim2="-150,-27" />
+      <Point rDim1="132,33" rDim2="-105,-27" />
+      <Point rDim1="132,33" rDim2="-105,-27" />
+    </Bendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/dealQuestion.do,updateQuestion,/WEB-INF/updateQuestion.jsp,1" routingType="1">
+    <Bendpoints>
+      <Point rDim1="135,25" rDim2="-30,-215" />
+    </Bendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/modifyPwd.do,modifyPwd,/WEB-INF/modifyPwd.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="225,-100" />
+      <AbsolutePoint location="120,-100" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/dealStu.do,toAddStu,/WEB-INF/addStu.jsp,1" routingType="1">
+    <Bendpoints />
+  </StrutsTransition>
+  <StrutsTransition id="/show.do,toShowStu,/WEB-INF/showStu.jsp,1" routingType="1">
+    <Bendpoints />
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/regTeacher.jsp,null,/regTeacher.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="165,350" />
+      <AbsolutePoint location="240,350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/addStu.jsp,null,/dealStu.do,2" routingType="1">
+    <Bendpoints>
+      <Point rDim1="-120,15" rDim2="145,23" />
+    </Bendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/modifyPwd.do,toCenter,/WEB-INF/center.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="391,-83" />
+      <AbsolutePoint location="465,-83" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/dealQuestion.do,addQuestion,/WEB-INF/addQuestion.jsp,1" routingType="1">
+    <Bendpoints>
+      <Point rDim1="180,10" rDim2="-195,-215" />
+      <Point rDim1="180,130" rDim2="-195,-95" />
+      <Point rDim1="180,175" rDim2="-195,-50" />
+    </Bendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/dealStu.do,toUpdateStu,/WEB-INF/updateStu.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="825,-30" />
+      <AbsolutePoint location="825,-80" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,exam,/WEB-INF/exam.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="105,164" />
+      <AbsolutePoint location="105,210" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="operQueOk;6,null,/WEB-INF/operQueOk.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="795,-335" />
+      <AbsolutePoint location="795,-300" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="operok;6,null,/WEB-INF/operok.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="105,-335" />
+      <AbsolutePoint location="105,-285" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/regTeacher.do,tologin,/WEB-INF/login.jsp,1" routingType="1">
+    <Bendpoints>
+      <Point rDim1="-8,-97" rDim2="-60,108" />
+    </Bendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/show.do,showQuestion,/WEB-INF/showQuestion.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1027,329" />
+      <AbsolutePoint location="1185,329" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/regTeacher.do,regfail,/WEB-INF/regTeacher.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="240,410" />
+      <AbsolutePoint location="165,410" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/addQuestion.jsp,null,/dealQuestion.do,2" routingType="1">
+    <Bendpoints>
+      <Point rDim1="0,-80" rDim2="375,145" />
+      <Point rDim1="-165,-80" rDim2="210,145" />
+      <Point rDim1="-165,-245" rDim2="210,-20" />
+    </Bendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,success,/WEB-INF/mainFrame.jsp,1" routingType="1">
+    <Bendpoints>
+      <Point rDim1="212,-29" rDim2="-195,45" />
+    </Bendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="opererr;6,null,/WEB-INF/opererr.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="315,-335" />
+      <AbsolutePoint location="315,-285" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/regTeacher.do,toregister,/WEB-INF/regTeacher.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="240,380" />
+      <AbsolutePoint location="165,380" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/dealQuestion.do,toQuestionManager,/WEB-INF/questionManager.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="540,265" />
+      <AbsolutePoint location="540,315" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/mainFrame.jsp,null,/modifyPwd.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="480,30" />
+      <AbsolutePoint location="315,30" />
+      <AbsolutePoint location="315,-61" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="operQueError;6,null,/WEB-INF/operQueErr.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="555,-335" />
+      <AbsolutePoint location="555,-285" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/updateQuestion.jsp,null,/dealQuestion.do,0" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="736,405" />
+      <AbsolutePoint location="736,185" />
+      <AbsolutePoint location="615,185" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/mainFrame.jsp,null,/dealStu.do,0" routingType="1">
+    <Bendpoints>
+      <Point rDim1="105,-20" rDim2="-125,8" />
+    </Bendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/login.jsp,null,/login.do,0" routingType="1">
+    <Bendpoints>
+      <Point rDim1="-30,-72" rDim2="212,-14" />
+    </Bendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/center.jsp,null,/modifyPwd.do,0" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="465,-113" />
+      <AbsolutePoint location="391,-113" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/mainFrame.jsp,null,/dealQuestion.do,0" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="540,91" />
+      <AbsolutePoint location="540,165" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

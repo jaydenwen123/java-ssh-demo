@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+ "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+ "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+ <struts-config>
+ 			<!-- 配置表单类	 -->		
+ 	<form-beans >
+ 		<form-bean name="userForm" type="com.forms.UserForm"></form-bean>
+ 	</form-beans>
+			 <!-- 配置action -->
+ 	<action-mappings>
+			 <!-- 配置 具体的Action-->
+ 		<action path="/login" name="userForm"  type="com.actions.LoginAction">
+			 <!-- 配置跳转关系-->
+ 			<forward name="ok" path="/WEB-INF/welcome.jsp"/>
+ 			<forward name="err" path="/WEB-INF/error.jsp"/>
+ 		</action>
+ 	</action-mappings>
+ </struts-config>

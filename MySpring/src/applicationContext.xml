@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation=
+				"http://www.springframework.org/schema/beans 
+				http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+				http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context-2.5.xsd
+				http://www.springframework.org/schema/tx 
+				http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+	<bean id="userService"  class="com.service.UserService">
+	<property name="name">
+		<value>文小飞</value>
+	</property>
+	<property name="byteService" ref="byteService"></property>
+	</bean>
+	<bean id="byteService"  class="com.service.ByteService">
+		<property name="name"  value="王树明"></property>
+	</bean>
+	
+	<bean  id="lowerLetter" class="com.service.LowerLetter">
+		<property name="str" value="ABCDEFG"></property>
+	</bean>
+	<bean id="upperLetter"  class="com.service.UpperLetter">
+		<property  name="str"  value="hijklmn"></property>
+	</bean>
+	
+</beans>		
+	

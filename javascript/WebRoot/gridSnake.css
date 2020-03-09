@@ -1,0 +1,32 @@
+@CHARSET "UTF-8";
+body{
+	
+	margin: 0 auto;
+}
+.mainfield{
+	width:720px;
+	height: 450px;
+	background-color: pink;
+	position: absolute;
+	top: 70px;
+	left:300px;
+	margin: 0 auto;
+}
+.snakeBody{
+	
+	position:absolute;
+	top:427px;
+	left:410px; 
+}
+.snake{
+	
+		margin: 0px;
+		padding: 0px;
+		float:left;
+}
+.operCenter{
+	position: absolute;
+	top:540px;
+	left:430px;
+	background-color: #D3815D;
+}

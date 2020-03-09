@@ -1,0 +1,519 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>guanggao.html</title>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
+    <meta http-equiv="description" content="this is my page"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript" language="javascript">
+		<!--
+			function testMove(){
+				window.alert(document.documentElement.scrolltop);
+				var imageDiv=document.getElementById("imageDiv");
+				imageDiv.style.top=document.documentElement.scrolltop+50;
+				imageDiv.style.left=document.documentElement.scrollLeft;
+			}
+		//-->
+	</script>
+  </head>
+  
+  <body onscroll="return testMove()">
+   	<div >
+//ISO8859-1西欧字符集  GBK繁体中文    GB2312简体中文    Unicode国际通用字符集
+//堆：不连续，放置new出来的对象
+//栈：自动分配连续的区域，后进先出，放置局部变量。
+//Garbage collection 垃圾回收机制
+//this 隐式参数  通过构造器调用另外一个构造器。
+//final 修饰常量（只能初始化一次），方法（不能重写，能重载），类（不能继承）
+//static 修饰方法（静态方法），修饰变量（静态变量），修饰类（静态类）
+//多态：（方法的多态）三个必要条件：有继承，有方法的的重写，父类引用指向子类对象。
+//可以将父类引用指向的子类对象强制转换为子类对象
+//回调的实现callback  hook
+//内部类：静态内部类，非静态内部类
+//StringBuilder  StringBuffer String 三者区别
+//String 不可变字符序列
+//StringBuilder  效率高，线程不安全
+//StringBuffer 效率低，线程安全
+//自动装箱 auto——boxing 
+//自动拆箱
+/*1、java.util.Date类型转换成long类型
+java.util.Date dt = new Date();
+System.out.println(dt.toString());   //java.util.Date的含义
+long lSysTime1 = dt.getTime() / 1000;   //得到秒数，Date类型的getTime()返回毫秒数
+
+2、由long类型转换成Date类型
+SimpleDateFormat sdf= new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+//前面的lSysTime是秒数，先乘1000得到毫秒数，再转为java.util.Date类型
+java.util.Date dt = new Date(lSysTime1 * 1000);  
+String sDateTime = sdf.format(dt);  //得到精确到秒的表示：08/31/2006 21:08:00
+System.out.println(sDateTime);
+2016/5/203、"08/31/2006 21:08:00"格式的String转换java.util.Date类型
+String sDt = "08/31/2006 21:08:00";
+SimpleDateFormat sdf= new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+Date dt2 = sdf.parse(sDt);
+//继续转换得到秒数的long型
+long lTime = dt2.getTime() / 1000;
+
+//注意HH与hh含认不同，HH表示以24小时制取，hh表示以12小时制取
+常用的格式的含义，摘自Jdk，注意大小写的含义通常是不同的：
+字母    含义                            示例
+y    Year                             1996;96             哪一年
+M   Month in year  J              uly;Jul;07           一年中的哪一月
+m   Minute in hour                 30                    一个小时中的第几分钟
+w   Week in year                   27                   一年中的第几个星期
+W   Week in month                 2                    一个月中的第几个星期
+D    Day in year                     189                 一年中的第几天
+d    Day in month                   10                  一个月中的第几天
+H    Hour in day (0-23)            0                   一天中的第几个小时（24小时制）
+h    Hour in am/pm (1-12)        12                  一天中上午、下午的第几个小时（12小时制）
+S    Millisecond                      978                 毫秒数
+s    Second in minute              55                  一分钟的第几秒
+ 
+4、系统当前时间
+long lSysTime2 = System.currentTimeMillis();   //得到毫秒表示的系统当前时间*/
+//java 异常类Throwable （Error，Exception）
+
+//Java 容器collection四大借口（set list map collection）
+//set:元素无顺序，不能重复
+//list 元素有顺序，可以重复
+//map：通过一个对象调用另外一个对象 键值对key-value
+//arrayList 底层实现数组，方便遍历，插入，修改快 ，线程不安全，效率高
+//Linklist 底层实现链表，方便插入，修改，遍历慢，线程不安全，效率高
+//vector 线程安全，效率低
+//map 底层实现，数组加链表（数组里面放链表）map键值不能重复
+//hashcode equals 二者之间的关系。hashcode 相等时，不一定equals相等
+//但是equals相等时，hashcode一定相等。
+//equals 比较二者的内容。而不是同一个对象，
+//等于号比较二者是不是同一个对象。
+
+//HashMap 和Hashtable 的区别。
+//首先HashMap线程不安全，效率相对较高，Hashtable线程安全，效率相对较低
+//null：HashMap 键值最多一个null，而value可以有多个null
+//Hashtable键和值不能为空null
+//父类不同，Hashtable父类为Directory  HashMap父类为AbstractMap
+// 程序   进程   线程
+//程序 指令集  静态概念
+//线程：操作系统调度程序，动态概念
+//线程：在进程内多条执行路径。
+线程状态
+新生状态
+就绪状态
+运行状态
+阻塞状态
+死亡状态
+
+//ISO8859-1西欧字符集  GBK繁体中文    GB2312简体中文    Unicode国际通用字符集
+//堆：不连续，放置new出来的对象
+//栈：自动分配连续的区域，后进先出，放置局部变量。
+//Garbage collection 垃圾回收机制
+//this 隐式参数  通过构造器调用另外一个构造器。
+//final 修饰常量（只能初始化一次），方法（不能重写，能重载），类（不能继承）
+//static 修饰方法（静态方法），修饰变量（静态变量），修饰类（静态类）
+//多态：（方法的多态）三个必要条件：有继承，有方法的的重写，父类引用指向子类对象。
+//可以将父类引用指向的子类对象强制转换为子类对象
+//回调的实现callback  hook
+//内部类：静态内部类，非静态内部类
+//StringBuilder  StringBuffer String 三者区别
+//String 不可变字符序列
+//StringBuilder  效率高，线程不安全
+//StringBuffer 效率低，线程安全
+//自动装箱 auto——boxing 
+//自动拆箱
+/*1、java.util.Date类型转换成long类型
+java.util.Date dt = new Date();
+System.out.println(dt.toString());   //java.util.Date的含义
+long lSysTime1 = dt.getTime() / 1000;   //得到秒数，Date类型的getTime()返回毫秒数
+
+2、由long类型转换成Date类型
+SimpleDateFormat sdf= new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+//前面的lSysTime是秒数，先乘1000得到毫秒数，再转为java.util.Date类型
+java.util.Date dt = new Date(lSysTime1 * 1000);  
+String sDateTime = sdf.format(dt);  //得到精确到秒的表示：08/31/2006 21:08:00
+System.out.println(sDateTime);
+2016/5/203、"08/31/2006 21:08:00"格式的String转换java.util.Date类型
+String sDt = "08/31/2006 21:08:00";
+SimpleDateFormat sdf= new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+Date dt2 = sdf.parse(sDt);
+//继续转换得到秒数的long型
+long lTime = dt2.getTime() / 1000;
+
+//注意HH与hh含认不同，HH表示以24小时制取，hh表示以12小时制取
+常用的格式的含义，摘自Jdk，注意大小写的含义通常是不同的：
+字母    含义                            示例
+y    Year                             1996;96             哪一年
+M   Month in year  J              uly;Jul;07           一年中的哪一月
+m   Minute in hour                 30                    一个小时中的第几分钟
+w   Week in year                   27                   一年中的第几个星期
+W   Week in month                 2                    一个月中的第几个星期
+D    Day in year                     189                 一年中的第几天
+d    Day in month                   10                  一个月中的第几天
+H    Hour in day (0-23)            0                   一天中的第几个小时（24小时制）
+h    Hour in am/pm (1-12)        12                  一天中上午、下午的第几个小时（12小时制）
+S    Millisecond                      978                 毫秒数
+s    Second in minute              55                  一分钟的第几秒
+ 
+4、系统当前时间
+long lSysTime2 = System.currentTimeMillis();   //得到毫秒表示的系统当前时间*/
+//java 异常类Throwable （Error，Exception）
+
+//Java 容器collection四大借口（set list map collection）
+//set:元素无顺序，不能重复
+//list 元素有顺序，可以重复
+//map：通过一个对象调用另外一个对象 键值对key-value
+//arrayList 底层实现数组，方便遍历，插入，修改快 ，线程不安全，效率高
+//Linklist 底层实现链表，方便插入，修改，遍历慢，线程不安全，效率高
+//vector 线程安全，效率低
+//map 底层实现，数组加链表（数组里面放链表）map键值不能重复
+//hashcode equals 二者之间的关系。hashcode 相等时，不一定equals相等
+//但是equals相等时，hashcode一定相等。
+//equals 比较二者的内容。而不是同一个对象，
+//等于号比较二者是不是同一个对象。
+
+//HashMap 和Hashtable 的区别。
+//首先HashMap线程不安全，效率相对较高，Hashtable线程安全，效率相对较低
+//null：HashMap 键值最多一个null，而value可以有多个null
+//Hashtable键和值不能为空null
+//父类不同，Hashtable父类为Directory  HashMap父类为AbstractMap
+// 程序   进程   线程
+//程序 指令集  静态概念
+//线程：操作系统调度程序，动态概念
+//线程：在进程内多条执行路径。
+线程状态
+新生状态
+就绪状态
+运行状态
+阻塞状态
+死亡状态//ISO8859-1西欧字符集  GBK繁体中文    GB2312简体中文    Unicode国际通用字符集
+//堆：不连续，放置new出来的对象
+//栈：自动分配连续的区域，后进先出，放置局部变量。
+//Garbage collection 垃圾回收机制
+//this 隐式参数  通过构造器调用另外一个构造器。
+//final 修饰常量（只能初始化一次），方法（不能重写，能重载），类（不能继承）
+//static 修饰方法（静态方法），修饰变量（静态变量），修饰类（静态类）
+//多态：（方法的多态）三个必要条件：有继承，有方法的的重写，父类引用指向子类对象。
+//可以将父类引用指向的子类对象强制转换为子类对象
+//回调的实现callback  hook
+//内部类：静态内部类，非静态内部类
+//StringBuilder  StringBuffer String 三者区别
+//String 不可变字符序列
+//StringBuilder  效率高，线程不安全
+//StringBuffer 效率低，线程安全
+//自动装箱 auto——boxing 
+//自动拆箱
+/*1、java.util.Date类型转换成long类型
+java.util.Date dt = new Date();
+System.out.println(dt.toString());   //java.util.Date的含义
+long lSysTime1 = dt.getTime() / 1000;   //得到秒数，Date类型的getTime()返回毫秒数
+
+2、由long类型转换成Date类型
+SimpleDateFormat sdf= new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+//前面的lSysTime是秒数，先乘1000得到毫秒数，再转为java.util.Date类型
+java.util.Date dt = new Date(lSysTime1 * 1000);  
+String sDateTime = sdf.format(dt);  //得到精确到秒的表示：08/31/2006 21:08:00
+System.out.println(sDateTime);
+2016/5/203、"08/31/2006 21:08:00"格式的String转换java.util.Date类型
+String sDt = "08/31/2006 21:08:00";
+SimpleDateFormat sdf= new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+Date dt2 = sdf.parse(sDt);
+//继续转换得到秒数的long型
+long lTime = dt2.getTime() / 1000;
+
+//注意HH与hh含认不同，HH表示以24小时制取，hh表示以12小时制取
+常用的格式的含义，摘自Jdk，注意大小写的含义通常是不同的：
+字母    含义                            示例
+y    Year                             1996;96             哪一年
+M   Month in year  J              uly;Jul;07           一年中的哪一月
+m   Minute in hour                 30                    一个小时中的第几分钟
+w   Week in year                   27                   一年中的第几个星期
+W   Week in month                 2                    一个月中的第几个星期
+D    Day in year                     189                 一年中的第几天
+d    Day in month                   10                  一个月中的第几天
+H    Hour in day (0-23)            0                   一天中的第几个小时（24小时制）
+h    Hour in am/pm (1-12)        12                  一天中上午、下午的第几个小时（12小时制）
+S    Millisecond                      978                 毫秒数
+s    Second in minute              55                  一分钟的第几秒
+ 
+4、系统当前时间
+long lSysTime2 = System.currentTimeMillis();   //得到毫秒表示的系统当前时间*/
+//java 异常类Throwable （Error，Exception）
+
+//Java 容器collection四大借口（set list map collection）
+//set:元素无顺序，不能重复
+//list 元素有顺序，可以重复
+//map：通过一个对象调用另外一个对象 键值对key-value
+//arrayList 底层实现数组，方便遍历，插入，修改快 ，线程不安全，效率高
+//Linklist 底层实现链表，方便插入，修改，遍历慢，线程不安全，效率高
+//vector 线程安全，效率低
+//map 底层实现，数组加链表（数组里面放链表）map键值不能重复
+//hashcode equals 二者之间的关系。hashcode 相等时，不一定equals相等
+//但是equals相等时，hashcode一定相等。
+//equals 比较二者的内容。而不是同一个对象，
+//等于号比较二者是不是同一个对象。
+
+//HashMap 和Hashtable 的区别。
+//首先HashMap线程不安全，效率相对较高，Hashtable线程安全，效率相对较低
+//null：HashMap 键值最多一个null，而value可以有多个null
+//Hashtable键和值不能为空null
+//父类不同，Hashtable父类为Directory  HashMap父类为AbstractMap
+// 程序   进程   线程
+//程序 指令集  静态概念
+//线程：操作系统调度程序，动态概念
+//线程：在进程内多条执行路径。
+线程状态
+新生状态
+就绪状态
+运行状态
+阻塞状态
+死亡状态//ISO8859-1西欧字符集  GBK繁体中文    GB2312简体中文    Unicode国际通用字符集
+//堆：不连续，放置new出来的对象
+//栈：自动分配连续的区域，后进先出，放置局部变量。
+//Garbage collection 垃圾回收机制
+//this 隐式参数  通过构造器调用另外一个构造器。
+//final 修饰常量（只能初始化一次），方法（不能重写，能重载），类（不能继承）
+//static 修饰方法（静态方法），修饰变量（静态变量），修饰类（静态类）
+//多态：（方法的多态）三个必要条件：有继承，有方法的的重写，父类引用指向子类对象。
+//可以将父类引用指向的子类对象强制转换为子类对象
+//回调的实现callback  hook
+//内部类：静态内部类，非静态内部类
+//StringBuilder  StringBuffer String 三者区别
+//String 不可变字符序列
+//StringBuilder  效率高，线程不安全
+//StringBuffer 效率低，线程安全
+//自动装箱 auto——boxing 
+//自动拆箱
+/*1、java.util.Date类型转换成long类型
+java.util.Date dt = new Date();
+System.out.println(dt.toString());   //java.util.Date的含义
+long lSysTime1 = dt.getTime() / 1000;   //得到秒数，Date类型的getTime()返回毫秒数
+
+2、由long类型转换成Date类型
+SimpleDateFormat sdf= new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+//前面的lSysTime是秒数，先乘1000得到毫秒数，再转为java.util.Date类型
+java.util.Date dt = new Date(lSysTime1 * 1000);  
+String sDateTime = sdf.format(dt);  //得到精确到秒的表示：08/31/2006 21:08:00
+System.out.println(sDateTime);
+2016/5/203、"08/31/2006 21:08:00"格式的String转换java.util.Date类型
+String sDt = "08/31/2006 21:08:00";
+SimpleDateFormat sdf= new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+Date dt2 = sdf.parse(sDt);
+//继续转换得到秒数的long型
+long lTime = dt2.getTime() / 1000;
+
+//注意HH与hh含认不同，HH表示以24小时制取，hh表示以12小时制取
+常用的格式的含义，摘自Jdk，注意大小写的含义通常是不同的：
+字母    含义                            示例
+y    Year                             1996;96             哪一年
+M   Month in year  J              uly;Jul;07           一年中的哪一月
+m   Minute in hour                 30                    一个小时中的第几分钟
+w   Week in year                   27                   一年中的第几个星期
+W   Week in month                 2                    一个月中的第几个星期
+D    Day in year                     189                 一年中的第几天
+d    Day in month                   10                  一个月中的第几天
+H    Hour in day (0-23)            0                   一天中的第几个小时（24小时制）
+h    Hour in am/pm (1-12)        12                  一天中上午、下午的第几个小时（12小时制）
+S    Millisecond                      978                 毫秒数
+s    Second in minute              55                  一分钟的第几秒
+ 
+4、系统当前时间
+long lSysTime2 = System.currentTimeMillis();   //得到毫秒表示的系统当前时间*/
+//java 异常类Throwable （Error，Exception）
+
+//Java 容器collection四大借口（set list map collection）
+//set:元素无顺序，不能重复
+//list 元素有顺序，可以重复
+//map：通过一个对象调用另外一个对象 键值对key-value
+//arrayList 底层实现数组，方便遍历，插入，修改快 ，线程不安全，效率高
+//Linklist 底层实现链表，方便插入，修改，遍历慢，线程不安全，效率高
+//vector 线程安全，效率低
+//map 底层实现，数组加链表（数组里面放链表）map键值不能重复
+//hashcode equals 二者之间的关系。hashcode 相等时，不一定equals相等
+//但是equals相等时，hashcode一定相等。
+//equals 比较二者的内容。而不是同一个对象，
+//等于号比较二者是不是同一个对象。
+
+//HashMap 和Hashtable 的区别。
+//首先HashMap线程不安全，效率相对较高，Hashtable线程安全，效率相对较低
+//null：HashMap 键值最多一个null，而value可以有多个null
+//Hashtable键和值不能为空null
+//父类不同，Hashtable父类为Directory  HashMap父类为AbstractMap
+// 程序   进程   线程
+//程序 指令集  静态概念
+//线程：操作系统调度程序，动态概念
+//线程：在进程内多条执行路径。
+线程状态
+新生状态
+就绪状态
+运行状态
+阻塞状态
+死亡状态//ISO8859-1西欧字符集  GBK繁体中文    GB2312简体中文    Unicode国际通用字符集
+//堆：不连续，放置new出来的对象
+//栈：自动分配连续的区域，后进先出，放置局部变量。
+//Garbage collection 垃圾回收机制
+//this 隐式参数  通过构造器调用另外一个构造器。
+//final 修饰常量（只能初始化一次），方法（不能重写，能重载），类（不能继承）
+//static 修饰方法（静态方法），修饰变量（静态变量），修饰类（静态类）
+//多态：（方法的多态）三个必要条件：有继承，有方法的的重写，父类引用指向子类对象。
+//可以将父类引用指向的子类对象强制转换为子类对象
+//回调的实现callback  hook
+//内部类：静态内部类，非静态内部类
+//StringBuilder  StringBuffer String 三者区别
+//String 不可变字符序列
+//StringBuilder  效率高，线程不安全
+//StringBuffer 效率低，线程安全
+//自动装箱 auto——boxing 
+//自动拆箱
+/*1、java.util.Date类型转换成long类型
+java.util.Date dt = new Date();
+System.out.println(dt.toString());   //java.util.Date的含义
+long lSysTime1 = dt.getTime() / 1000;   //得到秒数，Date类型的getTime()返回毫秒数
+
+2、由long类型转换成Date类型
+SimpleDateFormat sdf= new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+//前面的lSysTime是秒数，先乘1000得到毫秒数，再转为java.util.Date类型
+java.util.Date dt = new Date(lSysTime1 * 1000);  
+String sDateTime = sdf.format(dt);  //得到精确到秒的表示：08/31/2006 21:08:00
+System.out.println(sDateTime);
+2016/5/203、"08/31/2006 21:08:00"格式的String转换java.util.Date类型
+String sDt = "08/31/2006 21:08:00";
+SimpleDateFormat sdf= new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+Date dt2 = sdf.parse(sDt);
+//继续转换得到秒数的long型
+long lTime = dt2.getTime() / 1000;
+
+//注意HH与hh含认不同，HH表示以24小时制取，hh表示以12小时制取
+常用的格式的含义，摘自Jdk，注意大小写的含义通常是不同的：
+字母    含义                            示例
+y    Year                             1996;96             哪一年
+M   Month in year  J              uly;Jul;07           一年中的哪一月
+m   Minute in hour                 30                    一个小时中的第几分钟
+w   Week in year                   27                   一年中的第几个星期
+W   Week in month                 2                    一个月中的第几个星期
+D    Day in year                     189                 一年中的第几天
+d    Day in month                   10                  一个月中的第几天
+H    Hour in day (0-23)            0                   一天中的第几个小时（24小时制）
+h    Hour in am/pm (1-12)        12                  一天中上午、下午的第几个小时（12小时制）
+S    Millisecond                      978                 毫秒数
+s    Second in minute              55                  一分钟的第几秒
+ 
+4、系统当前时间
+long lSysTime2 = System.currentTimeMillis();   //得到毫秒表示的系统当前时间*/
+//java 异常类Throwable （Error，Exception）
+
+//Java 容器collection四大借口（set list map collection）
+//set:元素无顺序，不能重复
+//list 元素有顺序，可以重复
+//map：通过一个对象调用另外一个对象 键值对key-value
+//arrayList 底层实现数组，方便遍历，插入，修改快 ，线程不安全，效率高
+//Linklist 底层实现链表，方便插入，修改，遍历慢，线程不安全，效率高
+//vector 线程安全，效率低
+//map 底层实现，数组加链表（数组里面放链表）map键值不能重复
+//hashcode equals 二者之间的关系。hashcode 相等时，不一定equals相等
+//但是equals相等时，hashcode一定相等。
+//equals 比较二者的内容。而不是同一个对象，
+//等于号比较二者是不是同一个对象。
+
+//HashMap 和Hashtable 的区别。
+//首先HashMap线程不安全，效率相对较高，Hashtable线程安全，效率相对较低
+//null：HashMap 键值最多一个null，而value可以有多个null
+//Hashtable键和值不能为空null
+//父类不同，Hashtable父类为Directory  HashMap父类为AbstractMap
+// 程序   进程   线程
+//程序 指令集  静态概念
+//线程：操作系统调度程序，动态概念
+//线程：在进程内多条执行路径。
+线程状态
+新生状态
+就绪状态
+运行状态
+阻塞状态
+死亡状态//ISO8859-1西欧字符集  GBK繁体中文    GB2312简体中文    Unicode国际通用字符集
+//堆：不连续，放置new出来的对象
+//栈：自动分配连续的区域，后进先出，放置局部变量。
+//Garbage collection 垃圾回收机制
+//this 隐式参数  通过构造器调用另外一个构造器。
+//final 修饰常量（只能初始化一次），方法（不能重写，能重载），类（不能继承）
+//static 修饰方法（静态方法），修饰变量（静态变量），修饰类（静态类）
+//多态：（方法的多态）三个必要条件：有继承，有方法的的重写，父类引用指向子类对象。
+//可以将父类引用指向的子类对象强制转换为子类对象
+//回调的实现callback  hook
+//内部类：静态内部类，非静态内部类
+//StringBuilder  StringBuffer String 三者区别
+//String 不可变字符序列
+//StringBuilder  效率高，线程不安全
+//StringBuffer 效率低，线程安全
+//自动装箱 auto——boxing 
+//自动拆箱
+/*1、java.util.Date类型转换成long类型
+java.util.Date dt = new Date();
+System.out.println(dt.toString());   //java.util.Date的含义
+long lSysTime1 = dt.getTime() / 1000;   //得到秒数，Date类型的getTime()返回毫秒数
+
+2、由long类型转换成Date类型
+SimpleDateFormat sdf= new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+//前面的lSysTime是秒数，先乘1000得到毫秒数，再转为java.util.Date类型
+java.util.Date dt = new Date(lSysTime1 * 1000);  
+String sDateTime = sdf.format(dt);  //得到精确到秒的表示：08/31/2006 21:08:00
+System.out.println(sDateTime);
+2016/5/203、"08/31/2006 21:08:00"格式的String转换java.util.Date类型
+String sDt = "08/31/2006 21:08:00";
+SimpleDateFormat sdf= new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+Date dt2 = sdf.parse(sDt);
+//继续转换得到秒数的long型
+long lTime = dt2.getTime() / 1000;
+
+//注意HH与hh含认不同，HH表示以24小时制取，hh表示以12小时制取
+常用的格式的含义，摘自Jdk，注意大小写的含义通常是不同的：
+字母    含义                            示例
+y    Year                             1996;96             哪一年
+M   Month in year  J              uly;Jul;07           一年中的哪一月
+m   Minute in hour                 30                    一个小时中的第几分钟
+w   Week in year                   27                   一年中的第几个星期
+W   Week in month                 2                    一个月中的第几个星期
+D    Day in year                     189                 一年中的第几天
+d    Day in month                   10                  一个月中的第几天
+H    Hour in day (0-23)            0                   一天中的第几个小时（24小时制）
+h    Hour in am/pm (1-12)        12                  一天中上午、下午的第几个小时（12小时制）
+S    Millisecond                      978                 毫秒数
+s    Second in minute              55                  一分钟的第几秒
+ 
+4、系统当前时间
+long lSysTime2 = System.currentTimeMillis();   //得到毫秒表示的系统当前时间*/
+//java 异常类Throwable （Error，Exception）
+
+//Java 容器collection四大借口（set list map collection）
+//set:元素无顺序，不能重复
+//list 元素有顺序，可以重复
+//map：通过一个对象调用另外一个对象 键值对key-value
+//arrayList 底层实现数组，方便遍历，插入，修改快 ，线程不安全，效率高
+//Linklist 底层实现链表，方便插入，修改，遍历慢，线程不安全，效率高
+//vector 线程安全，效率低
+//map 底层实现，数组加链表（数组里面放链表）map键值不能重复
+//hashcode equals 二者之间的关系。hashcode 相等时，不一定equals相等
+//但是equals相等时，hashcode一定相等。
+//equals 比较二者的内容。而不是同一个对象，
+//等于号比较二者是不是同一个对象。
+
+//HashMap 和Hashtable 的区别。
+//首先HashMap线程不安全，效率相对较高，Hashtable线程安全，效率相对较低
+//null：HashMap 键值最多一个null，而value可以有多个null
+//Hashtable键和值不能为空null
+//父类不同，Hashtable父类为Directory  HashMap父类为AbstractMap
+// 程序   进程   线程
+//程序 指令集  静态概念
+//线程：操作系统调度程序，动态概念
+//线程：在进程内多条执行路径。
+线程状态
+新生状态
+就绪状态
+运行状态
+阻塞状态
+死亡状态
+   	</div>
+   	<div id="imageDiv" style="width: 374px;height: 450px;background-image:url(wuqilong.jpg);background-repeat:no-repeat;
+   		 position: absolute;top: 20px;left:30px;">
+   	</div>
+  </body>
+</html>

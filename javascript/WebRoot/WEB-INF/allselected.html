@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>allselected.html</title>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
+    <meta http-equiv="description" content="this is my page"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript" language="javascript">
+		<!--
+			function test(obj){
+			var hobbys=document.getElementsByName("hobby");
+				if(obj.innerText=="全选"){
+					for(var i=0;i<hobbys.length;i++){
+						hobbys[i].checked=true;
+					}
+				}else if(obj.innerText=="取消"){
+					for(var i=0;i<hobbys.length;i++){
+						hobbys[i].checked=false;
+					}
+
+				}
+			}
+			
+			function test2(obj){
+			var hobbys=document.getElementsByName("hobby");
+			if(obj.checked){
+				for(var i=0;i<hobbys.length;i++){
+					hobbys[i].checked=true;
+				}
+			}else{
+			
+				for(var i=0;i<hobbys.length;i++){
+					hobbys[i].checked=false;
+				}
+				
+			}
+			}
+		
+		//-->
+	</script>
+  </head>
+  
+  <body>
+  	<h1>实现全选和取消的功能</h1>
+		<input type="checkbox" name="hobby" />篮球<br/>
+		<input type="checkbox" name="hobby" />足球<br/>
+		<input type="checkbox" name="hobby" />台球<br/>
+		<input type="checkbox" name="hobby" />拍球<br/>
+		<input type="checkbox" name="hobby" />网球<br/>
+		<input type="checkbox" name="hobby" />前球<br/>
+		<input type="checkbox" name="hobby" />冰棒球<br/>
+		<input type="checkbox" name="hobby" />橄榄球<br/>
+		<h1>实现方式一</h1>
+	<a href="#" onclick="test(this)">全选</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick="test(this)">取消</a>
+		<h1>实现方式二</h1>
+		<input type="checkbox" name="all" onclick="test2(this)"/>是否全选<br/>
+  </body>
+</html>

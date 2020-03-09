@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="register" type="com.wxf.struts.form.Register"/>
+		<form-bean name="updatePwd" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="oldPwd" type="java.lang.String" />
+			<form-property name="newPwd" type="java.lang.String" />
+			<form-property name="againPwd" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="messageForm" type="com.wxf.struts.form.MessageForm"/>
+	</form-beans>
+	
+	<global-forwards>
+		<forward name="error" path="/WEB-INF/error.jsp"/>
+	</global-forwards>
+	
+	<action-mappings>
+		<action path="/loginOrReg" parameter="flag" name="register" type="com.wxf.struts.actions.LoginAndRegisterAction">
+			<forward name="success" path="/WEB-INF/mainFrame.jsp"/>
+			<forward name="toback" path="/WEB-INF/login.jsp"/>
+			<forward name="toregister" path="/WEB-INF/register.jsp"/>
+		</action>
+		
+		<action path="/dealMessage" parameter="flag" name="messageForm"  type="com.wxf.struts.actions.DealMessageAction">
+			<forward name="toCenter" path="/WEB-INF/userCenter.jsp"/>
+			<forward name="showMessageList1" path="/WEB-INF/showMessageList1.jsp"/>
+			<forward name="showMessageList2" path="/WEB-INF/showMessageList2.jsp"/>
+			<forward name="toPubMsg" path="/WEB-INF/pubMsgUi.jsp"/>
+			<forward name="success" path="/WEB-INF/mainFrame.jsp"/>
+			<forward name="showMessage" path="/WEB-INF/showMessage.jsp"/>
+			<forward name="toUpdateMsg" path="/WEB-INF/updateMsgUi.jsp"/>
+			<forward name="opererror" path="/WEB-INF/opererror.jsp"/>
+			<forward name="operok" path="/WEB-INF/operok.jsp"/>
+			<forward name="toSelectWay" path="/WEB-INF/selectWay.jsp"/>
+		</action>
+		
+		<action path="/updatepwd" parameter="flag" name="updatePwd"  type="com.wxf.struts.actions.UpdatePwdAction">
+			<forward name="updateok" path="/WEB-INF/userCenter.jsp"/>
+			<forward name="updateerr" path="/WEB-INF/updatePwd.jsp"/>
+			<forward name="toUpdatePwd" path="/WEB-INF/updatePwd.jsp"/>
+		</action>
+		
+	</action-mappings>
+</struts-config>

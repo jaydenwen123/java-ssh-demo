@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation=
+				"http://www.springframework.org/schema/beans 
+				http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+				http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context-2.5.xsd
+				http://www.springframework.org/schema/tx 
+				http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+				
+	<context:annotation-config/>
+
+	<bean id="service" class="com.wxf.test.Service" >
+		<property name="name" value="hello"/>
+	</bean>	
+	
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property  name="username" value="root"/>
+		<property  name="password" value="wen6224261995"/>
+		<property  name="url" value="jdbc:mysql://localhost:3306/employeemanager"/>
+		<property  name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<property  name="initialSize" value="3"/>
+		<property  name="maxActive" value="500"/>
+		<property  name="maxIdle" value="2"/>
+		<property  name="minIdle" value="1"/>
+	</bean>
+	
+	<bean id="sessionFactory"  class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="mappingResources">
+			<list>
+				<value>com/wxf/domain/Employee.hbm.xml </value>
+				<value>com/wxf/domain/Department.hbm.xml </value>
+			</list>
+		</property>
+		<property name="hibernateProperties" >
+			<value>
+		    	hibernate.dialect=org.hibernate.dialect.MySQLDialect
+	        	hibernate.hbm2ddl.auto=update
+	        	hibernate.show_sql=true
+		        hibernate.format_sql=false	 
+				hibernate.cache.use_second_level_cache=true
+        	    hibernate.cache.provider_class=org.hibernate.cache.EhCacheProvider
+        	    hibernate.generate_statistics=true	          
+			</value>
+		</property>
+	
+	</bean>
+	
+	<bean id="employeeServiceimpl" class="com.wxf.service.impl.EmployeeServiceimpl"/>
+	<!-- <property name="sessionFactory" ref="sessionFactory"/> -->		
+
+	<bean id="departmentServiceimpl" class="com.wxf.service.impl.DepartmentServiceImpl"/>
+	
+	<!-- 配置action -->
+	<bean name="/login" class="com.wxf.web.struts.actions.EmployeeLoginAction"/>
+	<!-- <property name="employeeServiceInter" ref="employeeServiceimpl"></property> -->
+	
+	<bean name="/showEmployee" scope="prototype" class="com.wxf.web.struts.actions.DealEmployeeAction"/>
+	
+	<bean name="/toAdd"  scope="prototype" class="com.wxf.web.struts.actions.ToAddFrameAction"/>
+	
+	<bean name="/toUpdate" scope="prototype"  class="com.wxf.web.struts.actions.ToUpdateFrameAction"/>
+	
+	<!-- 配置事务管理器，统一管理sessionFactory的事务 -->
+<bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+  	<property name="sessionFactory" ref="sessionFactory"/>
+</bean>
+<!-- 启用事务注解 -->
+<tx:annotation-driven transaction-manager="txManager"/>
+</beans>

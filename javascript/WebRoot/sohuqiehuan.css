@@ -1,0 +1,82 @@
+@CHARSET "UTF-8";
+body{
+	
+	font-size: 10px;
+}
+.div{
+	
+	width: 106px;
+	height: 126px;
+	/* background-color: pink; */
+	
+}
+
+.div1{
+	width: 23px;
+	height: 126px;
+	/* background-color: green; */
+	margin: 0px;
+	float: left;
+}
+
+.div1 ul{
+	
+	width: 23px;
+	height: 126px;
+	background-color: gray;
+	padding: 0px;
+	margin: 0px;
+}
+
+.div1 ul li{
+	
+	width:17px;
+	height: 38px;
+	float: left;
+	background-color: pink;
+	margin-top:3px; 
+	margin-left: 3px;
+}
+
+.div21,.div22,.div23{
+	width:83px;
+	height: 126px;
+	/* background-color: red; */
+	margin: 0px;
+	/*float: left;*/
+}
+
+.div21 ul,.div22 ul,.div23 ul{
+	
+		width:83px;
+		height: 126px;
+		/* background-color: silver; */
+		margin: 0px;
+		padding: 0px;
+}
+
+.div21 ul li,.div22 ul li,.div23 ul li{
+	
+	width: 78px;
+	height: 12px;
+ 	/* background-color: green; */ 
+	margin:0px;
+	padding:0px;
+	padding-top:3px;
+	padding-left:3px;
+	float: left;
+}
+
+.div21 ul li a,.div22 ul li a,.div23 ul li a{
+	
+	width: 78px;
+	height: 12px;
+	margin-left : 3px;
+	padding: 0px;
+}
+
+.div22 , .div23{
+	
+	display: none;
+}
+

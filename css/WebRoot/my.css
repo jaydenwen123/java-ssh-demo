@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+a:link img {
+	filter: gray;
+}
+a:HOVER img {
+	filter : "";
+}
+img {
+	filter :gray;
+}

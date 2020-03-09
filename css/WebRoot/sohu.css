@@ -1,0 +1,175 @@
+@CHARSET "UTF-8";
+body {
+	width:960px;
+	height:500px;
+	border: 1px solid red;
+	/*background-color: silver;*/
+	margin: 50px auto;
+	font-size: 14px;
+}
+
+.div_top{
+	
+	width:960px;
+	height: 22px;
+	/*background-color: green;*/
+}
+/*设置登录*/
+.login{
+	width:480px;
+	height: 18px;
+	/*background-color: silver;*/
+	float: left;
+	margin-top: 2px;
+	padding-bottom: 1px;
+}
+
+.span1{
+	width:16px;
+	height: 18px;
+	/*background-color: red;*/
+	margin-top: 2px;
+	}
+/*设置首页面*/
+
+.index{
+	width:150px;
+	height: 18px;
+	/*background-color: blue;*/
+	float: left;
+	margin-left: 20px;
+	margin-top: 2px;
+	
+}
+
+.span2{
+	
+	width:150px;
+	height: 18;
+}
+/*设置顶部的超链接*/
+.hrefs{
+	width: 250px;
+	height: 18px;
+/*	background-color: olive;*/
+	float: right;
+	margin-top: 2px;
+}
+/*logo图片位置*/
+.logo{
+	width: 100px;
+	height: 70px;
+	background-color: yellow;
+	float: left;
+	margin-top: 5px;
+}
+.logo img{
+	
+	width:100px;
+	height:70px;
+}
+/*导航条*/
+.navi{
+	width:860px;
+	height: 70px;
+	/*background-color: red;*/
+	margin-top: 5px;
+	float: left;
+	padding: 0px;
+}
+
+.navi_top{
+	width: 860px;
+	height: 20px;
+	background-color: orange;
+	margin-top: 3px;
+	float: left;
+}
+
+.faceul{
+	width:860px;
+	height:15px;
+	list-style-type: none;
+	padding: 0px;
+	float: left;
+	margin:0px;
+}
+
+.faceul li{
+	margin-left:20px;
+	float:left;
+	text-align: center;
+	margin-top: 2px;
+}
+
+.faceul li a{
+	
+	text-decoration: none;
+	
+}
+
+.navi_center{
+	width : 860px;
+	height: 20px;
+	background-color:orange;
+	margin-top: 3px;
+}
+.navi_bottom{
+	width : 860px;
+	height: 20px;
+	background-color: orange;
+	margin-top: 3px;
+}
+/*设置大的div用来放招生广告，房地产广告等*/
+.div_bottom{
+	width: 960px;
+	height: 350px;
+	/*	background-color: olive;*/
+	float: left;
+}
+/*招生广告*/
+.stu_ad{
+	width:100px;
+	height:200px;
+	background-color: fuchsia;
+	float: left;
+	margin-right:10px;
+	margin-top: 10px;
+}
+/*体育广告*/
+.pe_ad{
+	width:500px;
+	height: 200px;
+	background-color: lime;
+	float: left;
+	margin-right:10px;
+	margin-top: 10px;
+}
+/*房地产广告*/
+
+.house_ad{
+	width:140px;
+	height: 200px;
+	background-color: orange;
+	float: left;
+	margin-right:10px;
+	margin-top: 10px;
+}
+/*图片*/
+.pic_ad{
+	width: 180px;
+	height: 200px;
+	/*background-color: navy;*/
+	margin-right:8px;
+	float: right;
+	margin-top: 10px;
+	border-left: 1px solid silver;
+	text-align: center;
+	
+}
+
+.pic_ad img{
+	
+	width: 160px;
+	height: 180px;
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>window.html</title>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
+    <meta http-equiv="description" content="this is my page"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript" language="javascript">
+		<!--
+		  /*
+		    1.window.setTimeout(arg1, arg2);//定时多少(arg2)秒后执行函数arg1
+			2.window.clearTimeout(arg);
+			
+			3.window.setInterval(arg1, arg2);//每隔arg2秒循环执行函数arg1
+			4.window.clearInterval(arg);
+			
+			5.window.resizeTo(arg1, arg2);
+			6.window.resizeBy(arg1, arg2);
+			
+			7.window.prompt();
+			
+			8.window.open(optionalArg1, optionalArg2, optionalArg3, optionalArg4);
+			
+			9.window.moveBy(arg1, arg2);
+			10.window.moveTo(arg1, arg2);
+			
+			11.window.confirm(arg);
+			
+			12.window.alert(arg);
+			
+			13.window.opener
+			*/
+			
+			function testTimer1(){
+				window.alert("hello world");
+			}
+			function getCurrentTime(){
+				document.getElementById("span1").innerText=new Date().toLocaleString();
+			}
+			//测试setInterval 和clearInterval
+			var timer;
+			function testTimer2(){
+				timer=window.setInterval("getCurrentTime()",1000);
+				//clearInterval(timer);
+			}
+			//测试setTimeout 和clearTimeout
+			var timerId=window.setTimeout("testTimer1()", 5000);
+			clearTimeout(timerId);
+			
+			//测试resizeBy 和resizeto
+			
+			function testResize1()
+			{
+				window.resizeTo(400, 400);
+			}
+			function testResize2(){
+				window.resizeBy(400, 400);
+			}
+			
+			//测试moveto(绝对定位)和moveby(相对定位)
+			function testmove1(){
+				window.moveTo(50, 50);
+			}
+			
+			function testmove2(){
+				window.moveBy(50, 50);
+			}
+			
+			//测试prompt函数
+			function testprompt(){
+				var value=window.prompt("请输入一个值");
+				document.getElementById("span2").innerText=value;
+			}
+			
+			//测试window 的confirm 函数
+			
+			function testConfirm()
+			{
+				var returnVal=window.confirm("确认要删除吗");
+				if(returnVal){
+					window.alert("删除成功"+returnVal);
+				}else
+				{
+				
+					window.alert("删除失败"+returnVal);
+				}
+				
+			}
+			var windowId;
+			function testOpen(){
+			
+				windowId=window.open("window2.html");
+			}
+			
+			//测试operer这个属性
+			
+			function testOpener(){
+				var inputValue=document.getElementById("input").value;
+				windowId.document.getElementById("input").value=inputValue;
+			}
+		//-->
+	</script>
+  </head>
+  
+  <body style="font-weight: bold;font-size: 23px;">
+	  测试setInterval 和clearInterval<br/>
+	<input type="button" value="获取当前时间" onclick="testTimer2()"/><br/>
+	测试setTimeout 和clearTimeout<br/>
+	<span id="span1"></span><br/>
+	测试resizeBy 和resizeto<br/>
+	<input  type="button" value="改变窗口的大小1" onclick="testResize1()"/><br/>
+	<input  type="button" value="改变窗口的大小2" onclick="testResize2()"/><br/>
+	测试moveto(绝对定位)和moveby(相对定位)<br/>
+	<input  type="button" value="移动窗口1" onclick="testmove1()"/><br/>
+	<input  type="button" value="移动窗口2" onclick="testmove2()"/><br/>
+	测试prompt函数<br/>
+	<input  type="button" value="显示输入框" onclick="testprompt()"/><br/>
+	<span>你输入的值为：</span>
+	<span id="span2"></span><br/>
+	测试window 的confirm 函数<br/>
+	<input type="button" value="删除" onclick="testConfirm()"/><br/>
+	测试open函数<br/>
+	<input type="button" value="open" onclick="testOpen()"/><br/>
+	<span>window2发送的内容为：</span>
+	<span id="span3"></span><br/>
+	<input type="text" id="input"/>
+	<input type="button" value="发送" onclick="testOpener()"/>
+  </body>
+</html>

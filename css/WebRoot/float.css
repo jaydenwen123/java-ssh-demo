@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+.div {
+	width:300px;
+	height: 150px;
+	background-color: olive;
+	margin-left: 10px;
+    margin-top: 10px;
+    float:left;
+}
+.special {
+	
+	float:  right;	
+}
+#div1{
+	
+	height: 170px;
+}

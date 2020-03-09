@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>table.html</title>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
+    <meta http-equiv="description" content="this is my page"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript" language="javascript">
+		<!--
+			function testTable(obj){
+				var myTable=document.getElementById("myTable");
+				if(obj.value=="添加一行"){
+				//遍历所有表格中的元素
+				/* 	for(var i=0;i<myTable.rows.length;i++){
+						var tableRow=myTable.rows[i];
+						for(var key in tableRow.cells){
+							window.alert(tableRow.cells[key].innerText);
+						}
+					} */
+					var newRow=myTable.insertRow(3);
+					newRow.insertCell(0).innerText="3";
+					newRow.insertCell(1).innerText="文斌";
+					newRow.insertCell(2).innerText="冰冰";
+				}else if(obj.value="删除一行"){
+					var tableRowCounts=myTable.rows.length;
+					myTable.deleteRow(tableRowCounts-1);
+				}
+			}
+		
+		function operTable(obj){
+			//var forms=document.forms;
+			/* var value1=forms[0].noId.value;
+			var value2=forms[0].name.value;
+			var value3=forms[0].secondName.value; */
+			flag=false;
+			var value1=obj.noId.value;
+			var value2=obj.name.value;
+			var value3=obj.secondName.value;
+			var myTable=document.getElementById("myTable");
+			for(var i=0;i<myTable.rows.length;i++){
+				var tableRow=myTable.rows[i];
+				for(var j=0;j<tableRow.cells.length;j++){
+					if(value1!=tableRow.cells[0].innerText){
+					var tableRow=myTable.insertRow(parseInt(value1, 10));
+						tableRow.insertCell(0).innerText=value1;
+						tableRow.insertCell(1).innerText=value2;
+						tableRow.insertCell(2).innerText=value3;
+						if(!flag){
+						obj.noId.value="";
+						obj.name.value="";
+						obj.secondName.value="";
+						return flag;
+						}
+					}
+				}
+			} 
+			window.alert("排行榜的排名已经从在，请更改排名");
+			return true;
+		}
+		//-->
+	</script>
+  </head>
+	
+	
+  <body>
+  	
+  <table border="1px" style="border: 1px solid  red;" id="myTable">
+  		<caption>好汉排行榜</caption>
+		<tr><td>排名</td><td>姓名</td><td>绰号</td></tr>
+		<tr><td>1</td><td>问小飞</td><td>小蚊子</td></tr>
+		<tr><td>2</td><td>王树明</td><td>小明子</td></tr>
+	</table> 
+	<input type="button" value="添加一行" onclick="testTable(this)"/>
+	<input type="button" value="删除一行" onclick="testTable(this)"/><br/>
+	<br/><br/><br/><br/><br/>
+		<form action="" onsubmit="return operTable(this)">
+	<table>
+		<caption>添加你心目中的好汉</caption>
+		<tr><td>排名</td><td><input type="text" name="noId"/></td></tr>
+		<tr><td>姓名</td><td><input type="text" name="name"/></td></tr>
+		<tr><td>绰号</td><td><input type="text" name="secondName"/></td></tr>
+		<tr><td><input type="submit" value="添加"/></td><td><input type="reset" value="取消"/></td></tr>
+	</table>
+	</form>
+  </body>
+</html>

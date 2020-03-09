@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>MyHtml.html</title>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
+    <meta http-equiv="description" content="this is my page"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <link  rel="stylesheet" href="my.css" type="text/css"/>
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <script language="javascript" >
+		<!--
+			function test(e){
+			var div=document.getElementById("div");
+			//用来选择引入的第零个css文件，0表示引入的第零个.css文件
+			var ocssRules=document.styleSheets[0].rules;
+			if(e.value=="黑色"){
+				//获取第一个.css文件中的第一个类选择器下标从零开始。
+				ocssRules[0].style.backgroundColor="black";
+			}else if(e.value=="绿色"){
+				//div.style.backgroundColor="green";
+				ocssRules[0].style.backgroundColor="green";
+			}
+			}
+			function test2(e){
+				window.alert("the body is dbclicked");
+			}
+		//-->
+	</script>
+
+  </head>
+  <body style=" width:500px;height:300px;background-color: red;margin: 0">
+  	<div id="div" class="div">
+  		<input type="button" value="绿色"  onclick="test(this)"/>
+  		<input type="button" value="黑色" onclick="test(this)"/>
+  	</div>
+  </body>
+  
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>document.html</title>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
+    <meta http-equiv="description" content="this is my page"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    
+	<script type="text/javascript" language="javascript">
+		<!--
+			/*
+			1.document.write(text);//输出文本不换行
+			2.document.writeln(text);//输入出文本换行
+			
+			3.document.createElement(tagName);//动态的创建一个元素
+			4.removeChild(oldChild);//动态的删除一个元素
+			5.document.appendChild(newChild);//动态的添加一个元素
+			
+			//获取元素或者元素集合
+			6.document.getElementById(elementId);
+			7.document.getElementsByName(elementName);
+			8.document.getElementsByTagName(tagname);
+			
+			//通过某一元素来获取他的父亲节点，孩子节点，以它的上一个兄弟节点，下一个兄弟节点
+			9.document.parentNode;
+			10.document.childNodes;
+			11.document.nextSibling;
+			12.document.firstChild;
+			13.document.lastChild;
+			18.document.previousSibling;
+			
+			14.document.localName;
+			15.document.nodeName;
+			16.document.nodeType;
+			17.document.nodeValue;
+			19.document.styleSheets;
+			20.document.title;
+			21.document.URL;
+			*/
+			
+			//测试document的getElementById()
+			/*
+				getElementById(id)方法中的id的值必须唯一，如果不唯一，则取出第一个元素
+				getElementsByName(name)
+			*/
+			
+			function test1(){
+			var btn1=document.getElementById("btn1");
+			window.alert(btn1.value);
+			}
+			
+			//测试getElementsByName()
+			function test2(){
+				var collection=document.getElementsByName("hobby");
+				//window.alert(collection.length);
+				for(var i=0;i<collection.length;i++){
+					if(collection[i].checked){					
+					window.alert(collection[i].value);
+					}
+				}
+			}
+			
+			//测试getElementsByTagName()
+			function test3(obj){
+			
+				if(obj.value=="测试3"){
+					var col=document.getElementsByTagName("input");
+					window.alert(col.length);
+					for(var i=0;i<col.length;i++){
+						//window.alert(col[i].type);
+					}
+				}else if(obj.value=="测试4")
+					{
+						var col=document.getElementsByTagName("a");
+						window.alert(col.length);
+						
+						for(var key in col){
+							window.alert(col[key].href+"    "+col[key].innerText);
+						}
+					}
+				
+			}
+			
+			//测试createElement(),removechild(),appendChild()
+			function test4(obj){
+					var div2=document.getElementById("div2");
+				if(obj.value=="创建并添加一个元素"){
+					var btn1=document.createElement("input");
+					btn1.id="b";
+					btn1.type="text";
+					btn1.value="新创建的文本";	
+					div2.appendChild(btn1);
+				}else if(obj.value=="删除一个元素"){
+					//div2.removeChild(document.getElementById("b"));
+					document.getElementById("b").parentNode.removeChild(document.getElementById("b"));
+				}
+			}
+			//测试
+			/*9.document.parentNode;
+			10.document.childNodes;
+			11.document.nextSibling;
+			12.document.firstChild;
+			13.document.lastChild;
+			18.document.previousSibling;
+			*/
+			
+			function test5(obj){
+				var div1=$("div1");
+				if(obj.value=="获取父亲节点"){
+					window.alert(div1.parentNode);
+				}else if(obj.value=="获取孩子节点"){
+					var col=div1.childNodes; 
+					window.alert(col.length);
+					var span=document.getElementById("span111");
+					window.alert(span);
+					/* for(var key in col){
+						
+					} */
+				}else if(obj.value=="获取上一个兄弟节点"){
+					window.alert(div1.previousSibling);
+				}else if(obj.value=="获取下一个兄弟节点"){
+				 	window.alert(div1.nextSibling);
+				}else if(obj.value=="获取第一个孩子节点"){
+					window.alert(div1.firstChild);
+				}else if(obj.value=="获取最后一个孩子节点"){
+					window.alert(div1.lastChild);
+				}
+			}
+			//通过id来获取元素
+			function $(id){
+				return document.getElementById(id);
+			}
+			
+			//测试
+			/* 
+			14.document.localName;
+			15.document.nodeName;
+			16.document.nodeType;
+			17.document.nodeValue;
+			19.document.styleSheets;
+			20.document.title;
+			21.document.URL; 
+			*/
+			 function test6(obj){
+				var div1=$("div1");
+				if(obj.value=="获取styleSheets"){
+					window.alert(div1.styleSheets);
+				}else if(obj.value=="获取localName"){
+					window.alert(div1.localName);
+				}else if(obj.value=="获取nodetype"){
+					window.alert(div1.nodeType);
+				}else if(obj.value=="获取nodevalue"){
+					window.alert(div1.nodeValue);
+				}else if(obj.value=="获取title"){
+					window.alert(document.title);
+				}else if(obj.value=="获取url"){
+					window.alert(document.URL);
+				}
+			} 
+					
+		//-->
+	</script>
+  <link rel="stylesheet" href="document.css" type="text/css"></link>
+  </head>
+  
+  <body>
+  	<div id="div1">
+  		<span>测试getElementById()方法</span><br/>
+		<input type="button" id="btn1" value="button1"/><br/>
+		<input type="button" id="btn1" value="button2"/><br/>
+		<input type="button" id="btn1" value="button3"/><br/>
+		<input type="button" value="测试1" onclick="test1()"/><br/>
+		<span>测试getElementsByName()方法</span><br/>
+		<input type="checkbox" name="hobby" value="足球"/>足球
+		<input type="checkbox" name="hobby" value="台球"/>台球
+		<input type="checkbox" name="hobby" value="篮球"/>篮球
+		<input type="checkbox" name="hobby" value="排球"/>排球
+		<br/>
+		<input type="button" value="测试2" onclick="test2()"/>
+		<br/>
+		<span>测试getelementByTagName()方法</span><br/>
+		<input type="button" value="测试3" onclick="test3(this)"/><br/>
+			<a href="http://www.baidu.com">goto baidu</a>
+			<a href="http://www.souhu.com">goto sohu</a>
+			<a href="http://www.sina.cn">goto sina</a>
+		<br/>
+		<input type="button" value="测试4" onclick="test3(this)"/>
+	</div>
+		
+	
+	<div>
+		<input type="button" value="创建并添加一个元素" onclick="test4(this)"/>
+		<input type="button" value="删除一个元素" onclick="test4(this)"/>
+	</div>
+	
+	<div id="div2" style="width: 300px;height: 400px;background-color: red">
+	</div>
+	
+	<table style="background-color:pink;width: 400px;height: 300px;text-align: center;">
+		<tr><th>姓名</th><th>年龄</th><th>学号</th></tr>
+		<tr><td>文小飞</td><td>20</td><td>20120702019</td></tr>
+		<tr><td>程可心</td><td>22</td><td>201207020202</td></tr>
+		<tr><td>文兵兵</td><td>18</td><td>20179232323</td></tr>
+		<tr><td>王树明</td><td>23</td><td>2013070215</td></tr>
+	</table>
+	
+	<div style="width: 500px;height: 150px;border: 1px solid blue; background-color: green;">
+		<input type="button" value="获取父亲节点" onclick="test5(this)"/><br/>
+		<input type="button" value="获取孩子节点" onclick="test5(this)"/><br/>
+		<input type="button" value="获取上一个兄弟节点" onclick="test5(this)"/><br/>
+		<input type="button" value="获取下一个兄弟节点" onclick="test5(this)"/><br/>
+		<input type="button" value="获取第一个孩子节点" onclick="test5(this)"/><br/>
+		<input type="button" value="获取最后一个孩子节点" onclick="test5(this)"/><br/>
+		<span id="span111">span1</span>
+	</div>	
+	
+	<div style="width: 300px;height: 200px;background-color: orange;border: 1px solid red;">
+			<input type="button" value="获取styleSheets"  onclick="test6(this)"/><br/>
+			<input type="button" value="获取localName" onclick="test6(this)"/><br/>
+			<input type="button" value="获取nodeName" onclick="test6(this)"/><br/>
+			<input type="button" value="获取nodetype" onclick="test6(this)"/><br/>
+			<input type="button" value="获取nodevalue" onclick="test6(this)"/><br/>
+			<input type="button" value="获取title" onclick="test6(this)"/><br/>
+			<input type="button" value="获取url" onclick="test6(this)"/><br/>
+	</div>
+	<div class="d11">
+		div1
+	</div>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<daoContext>
+	<dao id="userDao" class="com.wxf.dao.impl.UserDaoImpl"/>
+	
+	<dao id="billDao" class="com.wxf.dao.impl.BillDaoImpl"/>
+	
+	<dao id="billItemDao" class="com.wxf.dao.impl.BillItemDaoImpl"/>
+	
+	<dao id="deptDao" class="com.wxf.dao.impl.DeptDaoImpl"/>
+	
+	<dao id="vectorDao" class="com.wxf.dao.impl.VectorDaoImpl"/>
+	
+	<dao id="incomeDao" class="com.wxf.dao.impl.IncomeDaoImpl"/>
+</daoContext>

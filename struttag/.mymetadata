@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="struttag"
+  id="myeclipse.1467099158053"
+  context-root="/struttag"
+  j2ee-spec="5.0"
+  archive="struttag.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

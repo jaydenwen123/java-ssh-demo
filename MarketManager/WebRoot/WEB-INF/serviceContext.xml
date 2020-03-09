@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<daoContext>
+	<dao id="userService" class="com.wxf.service.impl.UserServiceImpl"/>
+	
+	<dao id="billService" class="com.wxf.service.impl.BillServiceImpl"/>
+	
+	<dao id="billItemService" class="com.wxf.service.impl.BillItemServiceImpl"/>
+	
+	<dao id="deptService" class="com.wxf.service.impl.DeptServiceImpl"/>
+	
+	<dao id="vectorService" class="com.wxf.service.impl.VectorServiceImpl"/>
+	
+	<dao id="incomeService" class="com.wxf.service.impl.IncomeServiceImpl"/>
+</daoContext>

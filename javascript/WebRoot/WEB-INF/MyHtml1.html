@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>MyHtml.html</title>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
+    <meta http-equiv="description" content="this is my page"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <script language="javascript">
+		<!--
+			function Tiger (){
+				this.name="mario";
+				this.image=document.getElementById("myimg");
+				this.move=function (direct){
+				var div=document.getElementById("div1");
+				var img=document.getElementById("myimg");
+				var tigerfood=document.getElementById("food");
+				var img_left=img.style.left;
+				var img_top=img.style.top;
+				var food_left=tigerfood.style.left;
+				var food_top=tigerfood.style.top;
+				var div_width=div.style.width;
+				var div_height=div.style.height;
+				var imgLeft=parseInt(img_left.substring(0,img_left.length-2),10);
+				var imgTop=parseInt(img_top.substring(0,img_top.length-2),10);
+				var foodLeft=parseInt(food_left.substring(0,food_left.length-2),10);
+				var foodTop=parseInt(food_top.substring(0,food_top.length-2), 10);
+				var divWidth=parseInt(div_width.substring(0,div_width.length-2),10);
+				var divHeight=parseInt(div_height.substring(0,div_height.length-2),10);
+				//window.alert(div.cssText);
+				//var foodTop=parserInt(food_top.substring(0,food_top-2),10);
+				//var foodLeft=parserInt(food_left.substring(0,food_top-2),10);
+				//food.style.top=(100*Math().random()).toFixed(1);
+				//food.style.left=(100*Math().random()).toFixed(1);
+					switch (direct) {
+					case 0:
+						if(imgTop<=10){
+							window.alert("已经到达上边界，请向下运动");
+						}else
+						{	
+						 imgTop=imgTop-10;					
+						 img.style.top=imgTop+"px";
+						}
+						break;
+					case 1:
+						if(imgLeft>divWidth){
+							window.alert("已经到达右边界,请向左移动"+divWidth);
+						}else
+						{
+							imgLeft=imgLeft+10;
+							img.style.left=imgLeft+"px";
+						}
+						break;
+					case 2:
+						if(imgTop>divHeight){
+							window.alert("已经到达下边界，请向上运动");
+						}else
+						{						
+							imgTop=imgTop+10;
+							img.style.top=imgTop+"px";
+						}
+						break;
+					default:
+						if(imgLeft<=10){
+							window.alert("已经到达左边界,请向右移动");
+						}else
+						{
+							imgLeft=imgLeft-10;
+							img.style.left=imgLeft+"px";
+						}
+						break;
+					}
+					if((Math.abs(imgLeft-foodLeft)==50 && (imgTop==foodTop)) || 
+							(Math.abs(imgTop-foodTop)==50 && imgLeft==foodLeft)){
+						window.alert("老虎抓到猎物了");
+						this.food();
+					}
+				
+				};
+				this.food=function(){
+				
+					var tigerfood=document.getElementById("food");
+					var tigerfood_left=(450*Math.random()).toFixed();
+					var tigerfood_top=(248*Math.random()).toFixed();
+					tigerfood.style.left=parseInt(tigerfood_left.substring(0,tigerfood_left.length-1), 10)+"0px";
+					tigerfood.style.top=parseInt(tigerfood_top.substring(0,tigerfood_top.length-1), 10)+"0px";
+				};
+			
+			}
+			
+			var tiger=new Tiger();
+			/*var i=new Number(5);
+			for(var i=0;i<10;i++){
+			p=Math.random()*100;
+			//window.alert(p);
+			}*/
+			/*window.alert("string");
+				document.write("********************<br/>");
+			for(var key in window){
+				document.writeln(window[key]+"<br/>");
+			}*/
+		//-->
+	</script>
+
+  </head>
+  <body >
+    <div id="div1" style="background-color:pink;width: 500px;height: 300px;">
+    	<img  id="myimg" style="width: 50px;height: 50px;position: absolute;left: 10px;top: 10px;" src="images/937514292.png"/>
+   		<img src="images/wuqilong.jpg" id="food" style="width:50px;height: 50px;position: absolute;left:150px;top:80px;" />
+    </div>
+    <div style="background-color:orange;width:500px;height: 150px;padding-top: 30px;">
+    	<table border="1px" bgcolor="pick" style="margin: 0 auto;">
+    		<tr><td colspan="3" align="center">游戏键盘</td></tr>
+    		<tr><td>&nbsp;</td><td><input type="button" value="↑↑" onclick="tiger.move(0)" /></td><td>&nbsp;</td></tr>
+    		<tr><td><input type="button" value="←←" onclick="tiger.move(3)"/></td><td>&nbsp;</td><td><input type="button" value="→→" onclick="tiger.move(1)"/></td></tr>
+    		<tr><td>&nbsp;</td><td><input type="button" value="↓↓" onclick="tiger.move(2)  "/></td><td>&nbsp;</td></tr>
+    	</table>
+    </div> 
+  </body>
+  
+</html>

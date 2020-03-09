@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" 
+	"http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<struts-config>
+  <form-beans >
+    <form-bean name="userForm" type="com.wxf.struts.form.UserForm" />
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+    <action
+      attribute="userForm"
+      input="/WEB-INF/register.jsp"
+      name="userForm"
+      path="/register"
+      scope="request"
+      type="com.wxf.struts.action.RegisterAction"
+      validate="false" >
+      
+      <forward name="ok" path="/WEB-INF/ok.jsp" />
+      <forward name="error1" path="/WEB-INF/error1.jsp" />
+      <forward name="error" path="/WEB-INF/error.jsp" />
+      
+      
+    </action>
+
+    
+
+  </action-mappings>
+
+  <message-resources parameter="com.wxf.struts.ApplicationResources" />
+</struts-config>
+

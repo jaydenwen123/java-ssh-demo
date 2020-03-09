@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+a:LINK {
+	font-size:24px;
+	font:"华文新魏";
+	color: red;
+	text-decoration: none;
+}
+a:HOVER {
+	font-size:40px;
+	font:"宋体";
+	text-decoration: underline;
+}
+a:VISITED {
+	color:gray;
+}

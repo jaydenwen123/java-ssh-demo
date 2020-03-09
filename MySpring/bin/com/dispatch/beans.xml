@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation=
+				"http://www.springframework.org/schema/beans 
+				http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+				http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context-2.5.xsd
+				http://www.springframework.org/schema/tx 
+				http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+				<context:property-placeholder location="classpath:/com/dispatch/db.properties"/>
+	<!--方式一  普通方式的加载 
+	<bean id="dbUtil" class="com.dispatch.DbUtil">
+		<property name="name" value="root"/>
+		<property name="driverName" value="com.mysql.jdbc.Driver"/>
+		<property name="url" value="com.jdbc://@localhost:3306/test"/>
+		<property name="password" value="wen6224261995"/>
+	</bean>
+	 -->
+	 <!-- 方式二，分散处理 -->
+	 <bean id="dbUtil" class="com.dispatch.DbUtil">
+	 	<property name="name" value="${name}"></property>
+	 	<property name="driverName" value="${driverName}"></property>
+	 	<property name="url" value="${url}"></property>
+	 	<property name="password" value="${password}"></property>
+	 </bean>
+</beans>		
+	

@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>window2.html</title>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
+    <meta http-equiv="description" content="this is my page"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <script type="text/javascript" language="javascript">
+    	<!--
+    		function testOpener(){
+    			var inputValue=document.getElementById("input").value;
+    			//window.alert(inputValue);
+    			if(inputValue){
+    	    			window.opener.document.getElementById("span3").innerText=inputValue;
+    	    			window.alert("内容发送成功");
+    			}else{
+    				alert("发送的类容不能为空");
+    			}
+    		}
+    	//-->
+    </script>
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+  	<span >我是window2页面</span><br />
+	<input type="text" id="input"/><br/>
+	<input type="submit"value="发送" onclick="testOpener()"/><br/>
+  </body>
+</html>

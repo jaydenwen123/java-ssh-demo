@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+  <form-beans >
+    <form-bean name="userLoginForm" type="com.wxf.struts.form.UserLoginForm" />
+    <form-bean name="deptForm" type="com.wxf.struts.form.DeptForm" />
+
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards >
+    <forward name="opererror" path="/error.jsp" />
+    <forward name="operok" path="/success.jsp" />
+
+  </global-forwards>
+
+  <action-mappings >
+    <action
+      attribute="userLoginForm"
+      input="/WEB-INF/userLogin.jsp"
+      name="userLoginForm"
+      parameter="flag"
+      path="/loginAndOut"
+      scope="request"
+      type="com.wxf.struts.action.LoginAndOutAction"
+      validate="false">
+      <forward name="loginerr" path="/WEB-INF/userLogin.jsp" />
+      <forward name="mainFrame" path="/WEB-INF/mainFrame.jsp" />
+    </action>
+    <action
+      attribute="deptForm"
+      input="/AddFrame.jsp"
+      name="deptForm"
+      parameter="flag"
+      path="/deptAction"
+      type="com.wxf.struts.action.DeptAction">
+      <forward name="deptlist" path="/deptList.jsp" />
+      <forward name="toAdd" path="/AddFrame.jsp" />
+      <forward name="toUpdate" path="/UpdateFrame.jsp" />
+    </action>
+
+
+  </action-mappings>
+
+  <message-resources parameter="com.wxf.struts.ApplicationResources" />
+</struts-config>
+

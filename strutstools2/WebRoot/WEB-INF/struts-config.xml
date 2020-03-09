@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+  <form-beans >
+    <form-bean name="userForm" type="com.wen.struts.form.UserForm" />
+
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards >
+    <forward name="error" path="/WEB-INF/error.jsp" />
+
+  </global-forwards>
+
+  <action-mappings >
+    <action
+      attribute="userForm"
+      input="/WEB-INF/login.jsp"
+      name="userForm"
+      path="/login"
+      scope="request"
+      type="com.wen.struts.action.LoginAction"
+      validate="false" >
+      <forward name="ok" path="/WEB-INF/ok.jsp" />
+      <forward name="return" path="/WEB-INF/login.jsp" />    
+    </action>
+    <action
+      input="/WEB-INF/ok.jsp"
+      path="/showUser"
+      type="com.wen.struts.action.ShowUserAction"
+      validate="false" >
+      <forward name="showUser" path="/WEB-INF/userList.jsp" />
+    </action>
+    <action
+      input="/WEB-INF/userList.jsp"
+      path="/downLoad"
+      type="com.wen.struts.action.DownLoadAction"
+      validate="false" >
+      <forward name="toBack" path="/WEB-INF/userList.jsp" />
+    </action>
+
+
+
+
+
+  </action-mappings>
+
+  <message-resources parameter="com.wen.struts.ApplicationResources" />
+</struts-config>
+

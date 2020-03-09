@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>gouwuche.html</title>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
+    <meta http-equiv="description" content="this is my page"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript" language="javascript">
+		<!--
+			function check(obj){
+				var fruit =document.getElementsByName("fruit");
+				//window.alert(fruit.length);
+				var total=0;
+				for(var i=0;i<fruit.length;i++){
+					if(fruit[i].checked){
+						//window.alert(fruit[i].value);
+						total+=parseFloat(fruit[i].value);
+					}
+				}
+				//window.alert(total);
+				document.getElementById("total").innerText=total+"元";
+			}
+		
+		//-->
+	
+	
+	</script>
+  </head>
+  
+  <body>
+  
+		<h1>购物车</h1>
+		<input type="checkbox" name="fruit" value="10" onclick="check(this)"/> 香蕉 10元<br/>
+		<input type="checkbox" name="fruit" value="20" onclick="check(this)"/> 葡萄 20元<br/>
+		<input type="checkbox" name="fruit" value="30" onclick="check(this)"/> 梨子 30元<br/>
+		<input type="checkbox" name="fruit" value="40" onclick="check(this)"/> 苹果 40元<br/>
+		<input type="checkbox" name="fruit" value="50" onclick="check(this)"/> 草莓 50元<br/>
+		
+		总价：<span id="total">0元</span>
+  </body>
+</html>
